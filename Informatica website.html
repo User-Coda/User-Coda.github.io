@@ -1,0 +1,54 @@
+<html lang="nl-NL">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>informatica project</title>
+        <link rel="icon" type="image/x-icon" href="https://upload.wikimedia.org/wikipedia/commons/thumb/5/56/Black_computer_icon.png/120px-Black_computer_icon.png">
+        <link rel="stylesheet" href="./styling.css">
+    </head>
+    <body>
+        <div class="header">
+	    <h1>informatica project</h1>
+	   <button onclick="window.location.href = 'Games page.html';">Games</button>
+	    </div>
+        
+        
+     
+        
+        <script>
+		document.addEventListener("keydown", event =>{
+	if(event.code == "KeyC"){
+		sClp = true;
+		setCursify("start");
+	}
+	if(event.code == "KeyZ") setCursify('stop');
+});
+
+function getRandColor(){
+    let rand = `rgb(${Math.floor(Math.random() * 255)}, ${Math.floor(Math.random() * 255)}, ${Math.floor(Math.random() * 255)})`
+    return rand;
+}
+		var sClp = true; // sClp = set Cursify loop parameter
+function setCursify(par){
+    let array = document.querySelectorAll('*');
+    if(par == 'stop'){
+        sClp = false;
+        array.forEach(element => {
+            element.style.transition = "all 0.3s ease 0s";
+            element.style.backgroundColor = "";
+            element.style.color = "";
+        });
+    }
+    if(par == 'start' && sClp){ 
+        array.forEach(element => {
+            element.style.transition = "all 0s ease 0s"
+            element.style.backgroundColor = getRandColor();
+            element.style.color = getRandColor();
+        });
+        setTimeout(() => setCursify('start'), 100);
+    }
+}
+        </script>
+    </body>
+</html>

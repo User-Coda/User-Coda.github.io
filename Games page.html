@@ -1,0 +1,107 @@
+<html lang="nl-NL">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>informatica project</title>
+        <link rel="icon" type="image/x-icon" href="https://upload.wikimedia.org/wikipedia/commons/thumb/5/56/Black_computer_icon.png/120px-Black_computer_icon.png">
+        <link rel="stylesheet" href="./styling.css">
+    </head>
+    <body>
+
+	<div class="header">
+      <h1>informatica project</h1>
+	 <button onclick="window.location.href = 'Informatica website.html';">Home</button>
+	 <p><a href="https://www.pico-8-edu.com/">Speel hier jouw spellen af</a></p>
+	 </div>
+	    
+	    
+
+</div>
+        
+     <div class="gallery">
+  <a target="_blank" href="game information.html">
+    <img src="Color Run.png" alt="Color Run" width="600" height="400">
+  </a>
+  <button id="myBtn">Color Run by Jelle Vink</button>
+
+<div id="myModal" class="modal">
+
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <a href="jellevink.p8" download>
+	    <p> download game </p>
+</a>
+  </div>
+
+</div>
+        
+</div>
+
+<div class="gallery">
+  <a target="_blank" href="Color Run.png">
+    <img src="Color Run.png" alt="Forest" width="600" height="400">
+  </a>
+   <button id="myBtn2">Rocky by Ryan Cartledge</button>
+
+<div id="myModal2" class="modal">
+
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <a href="Rocky.p8" download>
+	    <p> download game </p>
+</a>
+	</div>
+</div>
+        
+</div>
+
+<div class="gallery">
+  <a target="_blank" href="Color Run.png">
+    <img src="Color Run.png" alt="Northern Lights" width="600" height="400">
+  </a>
+  <div class="desc">Game 3</div>
+</div>
+
+<div class="gallery">
+  <a target="_blank" href="Color Run.png">
+    <img src="Color Run.png" alt="Mountains" width="600" height="400">
+  </a>
+  <div class="desc">Add a description of the image here</div>
+</div>
+  </div>
+</div>
+  
+ <script>
+	 
+// Get the modal
+var modal = document.getElementById("myModal");
+
+// Get the button that opens the modal
+var btn = document.getElementById("myBtn");
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks the button, open the modal 
+btn.onclick = function() {
+  modal.style.display = "block";
+}
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+  modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+	 
+</script>
+  
+  
+  </body>
+</html>

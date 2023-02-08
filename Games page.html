@@ -23,17 +23,24 @@
   <a target="_blank" href="game information.html">
     <img src="Color Run.png" alt="Color Run" width="600" height="400">
   </a>
-  <button id="myBtn">Color Run by Jelle Vink</button>
+    <!-- Trigger/Open The Modal -->
+<button class="modal-button" href="#myModal1">Color run</button>
 
-<div id="myModal" class="modal">
+<!-- The Modal -->
+<div id="myModal1" class="modal">
 
+  <!-- Modal content -->
   <div class="modal-content">
-    <span class="close">&times;</span>
-    <a href="jellevink.p8" download>
+    <div class="modal-header">
+      <span class="close">×</span>
+      <h2>Color run by Jelle Vink</h2>
+    </div>
+    <div class="modal-body">
+      <a href="Color run.p8" download>
 	    <p> download game </p>
 </a>
+    </div>
   </div>
-
 </div>
         
 </div>
@@ -42,18 +49,25 @@
   <a target="_blank" href="Rocky.png">
     <img src="Rocky.png" alt="Forest" width="600" height="400">
   </a>
-   <button id="myBtn2">Rocky by Ryan Cartledge</button>
+   <!-- Trigger/Open The Modal -->
+<button class="modal-button" href="#myModal2">Rocky</button>
 
+<!-- The Modal -->
 <div id="myModal2" class="modal">
 
+  <!-- Modal content -->
   <div class="modal-content">
-    <span class="close">&times;</span>
-    <a href="Rocky.p8" download>
+    <div class="modal-header">
+      <span class="close">×</span>
+      <h2>Rocky by Ryan Cartledge</h2>
+    </div>
+    <div class="modal-body">
+      <a href="Rocky.p8" download>
 	    <p> download game </p>
 </a>
-	</div>
+    </div>
+  </div>
 </div>
-        
 </div>
 
 <div class="gallery">
@@ -74,32 +88,40 @@
   
  <script>
 	 
-// Get the modal
-var modal = document.getElementById("myModal");
-var modal = document.getElementById("myModal2");
-
 // Get the button that opens the modal
-var btn = document.getElementById("myBtn");
-var btn = document.getElementById("myBtn2");
+var btn = document.querySelectorAll("button.modal-button");
+
+// All page modals
+var modals = document.querySelectorAll('.modal');
 
 // Get the <span> element that closes the modal
-var span = document.getElementsByClassName("close")[0];
+var spans = document.getElementsByClassName("close");
 
-// When the user clicks the button, open the modal 
-btn.onclick = function() {
-  modal.style.display = "block";
+// When the user clicks the button, open the modal
+for (var i = 0; i < btn.length; i++) {
+ btn[i].onclick = function(e) {
+    e.preventDefault();
+    modal = document.querySelector(e.target.getAttribute("href"));
+    modal.style.display = "block";
+ }
 }
 
 // When the user clicks on <span> (x), close the modal
-span.onclick = function() {
-  modal.style.display = "none";
+for (var i = 0; i < spans.length; i++) {
+ spans[i].onclick = function() {
+    for (var index in modals) {
+      if (typeof modals[index].style !== 'undefined') modals[index].style.display = "none";    
+    }
+ }
 }
 
 // When the user clicks anywhere outside of the modal, close it
 window.onclick = function(event) {
-  if (event.target == modal) {
-    modal.style.display = "none";
-  }
+    if (event.target.classList.contains('modal')) {
+     for (var index in modals) {
+      if (typeof modals[index].style !== 'undefined') modals[index].style.display = "none";    
+     }
+    }
 }
 	 
 </script>
